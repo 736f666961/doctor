@@ -1,0 +1,99 @@
+package ma.youcode.doctor.controllers;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.persistence.Query;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.mindrot.jbcrypt.BCrypt;
+
+import ma.youcode.doctor.config.HybernateConfig;
+import ma.youcode.doctor.entity.User;
+
+/**
+ * Servlet implementation class Login
+ */
+@WebServlet("/login")
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private HybernateConfig hybernateConfig = null;
+	List<User> user = null;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Login() {
+        super();
+    }
+
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Instantiate HybernateConfig
+		hybernateConfig = new HybernateConfig();
+		
+		// Get session factory
+		SessionFactory factory = hybernateConfig.getSessionFactory();
+		
+		// Create session
+		Session session = factory.getCurrentSession();
+		
+		// Get data from user
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		String hashPwd = BCrypt.hashpw(password, BCrypt.gensalt());
+		
+		try {
+			// Start transaction
+			session.beginTransaction();
+			
+			// Debug
+			PrintWriter out = response.getWriter();
+			out.println("Email: " + email);
+			out.println("password: " + password);
+			out.println("hashPwd: " + hashPwd);
+			
+			
+			// Query users and get user
+			Query hql = session.createQuery("FROM User u WHERE u.email = :email AND u.password = :hashpwd");
+			hql.setParameter("email", email);
+			hql.setParameter("hashpwd", hashPwd);
+			user = hql.getResultList();
+			
+			session.getTransaction().commit();
+			
+			if (BCrypt.checkpw(password, hashPwd)) {
+				out.println("Match");
+			}else {
+				out.println("No match");
+			}
+			
+			out.println("isEmpty- " + user.isEmpty());
+			
+			for (User userInfo : user) {
+				if (userInfo.getEmail().equals(email) && BCrypt.checkpw(password, hashPwd)) {
+					out.println("User exists with: " + userInfo.getEmail() + " and " + userInfo.getPassword());
+				}else {
+					out.println("User does not exists with: " + userInfo.getEmail() + " and " + userInfo.getPassword());
+				}
+			}
+			
+
+			
+		} finally {
+			// Close factory
+			factory.close();
+		}
+	}
+
+}

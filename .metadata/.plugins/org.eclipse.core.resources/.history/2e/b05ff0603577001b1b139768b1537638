@@ -1,0 +1,88 @@
+<%@page import="java.util.List"%>
+<%@page import="ma.youcode.doctor.dao.impl.AppointmentDaoImpl"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+	    <div class="container" style="display: flex; flex-direction: column; justify-content: center;margin-top:80px">
+         <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half w3-margin-bottom" style="    width: 100%; display: flex; justify-content: center;">
+
+               <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off" style="width: 80%;">
+                  
+                                             <!-- Check if user logged in successfully -->				  
+                     <%
+				                       if (session != null && session.getAttribute("isAdded") != null && session.getAttribute("isLoggedIn").equals(true)) {
+				                       %>
+                     <li class="w3-green w3-xlarge w3-padding-16">Date added successfully</li>
+                     <%
+                     } else if (session != null && session.getAttribute("isAdded") != null && session.getAttribute("isLoggedIn").equals(false)) {
+                     %>
+                     <li class="w3-red w3-xlarge w3-padding-16">Failed to add date</li>
+                     <%
+                     }
+                     %>
+                  <form method="POST" action=<%= request.getContextPath() + "/date" %>>
+                     <li class="w3-dark-grey w3-xlarge w3-padding-16">Add Date</li>
+                     <input class="w3-input w3-padding-16" name="date"  type="date">
+                     <input class="w3-input w3-padding-16" name="time" type="time">
+                     <li class="w3-light-grey w3-padding-24">
+                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Add Date</button>
+                     </li>
+                  </form>
+               </ul>
+               
+               
+               
+            </div>
+         </div></div>
+         
+         <div class="w3-container" style="display: flex; flex-direction: column;width: 100%; align-items:center;justify-content: center;">
+<h1>Confirmed Appointments</h1>
+  <table class="w3-table-all w3-hoverable" style="width: 80%">
+    <thead>
+      <tr class="w3-light-grey">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Pets Number</th>
+        <th>Pet Type</th>
+         <th>Appointment Date</th>
+          <th>Appointment Time</th>
+      </tr>
+    </thead>
+               <%
+                   AppointmentDaoImpl appointmentDaoImpl = new AppointmentDaoImpl();
+                                 	                  
+              List<Object[]> appointments = appointmentDaoImpl.getAllAppointments();
+             
+             // check if there are some appointments
+             if (appointments.size() > 0) {
+             
+              for (Object[] appointment : appointments) { 
+              	
+               %>
+			    <tr>
+			      <td><%= appointment[0] %></td>
+  			      <td><%= appointment[1] %></td>
+    			      <td><%= appointment[2] %></td>
+		      			     <td><%= appointment[2] %></td>
+   			      			      <td><%= appointment[3] %></td>
+  			      		<td><%= appointment[4] %></td>
+  			      		   <td><%= appointment[5] %></td>
+			    </tr>
+			    
+			    <% } %>
+        <% } %>
+
+  </table>
+</div>
+</body>
+</html>
+	

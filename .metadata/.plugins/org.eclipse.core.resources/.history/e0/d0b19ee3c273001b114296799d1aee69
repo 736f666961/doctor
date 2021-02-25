@@ -1,0 +1,101 @@
+package ma.youcode.doctor.controllers;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import ma.youcode.doctor.entity.User;
+
+/**
+ * Servlet implementation class SignUp
+ */
+@WebServlet("/signup")
+public class SignUp extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SignUp() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// prinat
+		PrintWriter out = response.getWriter();
+		
+		// Create session factory
+		SessionFactory factory = new Configuration()
+				.configure("hibernate.cfg.xml")
+				.addAnnotatedClass(User.class)
+				.buildSessionFactory();
+		
+		// Create session
+		Session session = factory.getCurrentSession();
+		
+		try {
+			// Get data from user
+			String firstName = request.getParameter("firstname");
+			String lastName = request.getParameter("lastname");
+			String email = request.getParameter("email");
+			String password = request.getParameter("password");
+			
+			// Create User Object
+			User user = new User(firstName, lastName, email, password);
+			
+			// Begin transaction
+			session.beginTransaction();
+			
+			// Save user object to database
+			int isSignedUp = (int) session.save(user);
+			
+			if (isSignedUp > 0) {
+				// Commit transaction
+				session.getTransaction().commit();
+				
+				// Create session
+		        HttpSession httpSession = request.getSession();
+		        
+				// send error login message to login page
+		        httpSession.setAttribute("success_signup", true);
+			} else {
+				// Create session
+		        HttpSession httpSession = request.getSession();
+		        
+				// send error login message to login page
+		        httpSession.setAttribute("fail_signup", true);
+			}
+			
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			
+		} finally {
+			factory.close();
+		}
+	}
+
+}

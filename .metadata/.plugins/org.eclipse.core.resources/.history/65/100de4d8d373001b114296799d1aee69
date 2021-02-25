@@ -1,0 +1,23 @@
+package ma.youcode.doctor.config;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import ma.youcode.doctor.entity.User;
+
+public class HybernateConfig {
+	
+	// Create session factory
+	private SessionFactory factory = null;
+	
+	// Get session factory
+	SessionFactory getSessionFactory() {
+		factory = new Configuration()
+				.configure("hibernate.cfg.xml")
+				.addAnnotatedClass(User.class)
+				.buildSessionFactory();
+		
+		return factory;
+	}
+	
+}

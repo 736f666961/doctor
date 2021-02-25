@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+	    <div class="container w3-margin-32" style="display: flex; flex-direction: column; justify-content: center;">
+         <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half w3-margin-bottom" style="    width: 100%; display: flex; justify-content: center;">
+               <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off" style="width: 80%;">
+                  <form method="POST" action=<%= request.getContextPath() + "/date" %>>
+                     <li class="w3-dark-grey w3-xlarge w3-padding-16">Add Date</li>
+                     <input class="w3-input w3-padding-16" placeholder="Enter your firstname" name="firstname" autocomplete="off" type="date">
+                     <input class="w3-input w3-padding-16" placeholder="Enter your lastname" name="lastname" autocomplete="off" type="time">
+                     <li class="w3-light-grey w3-padding-24">
+                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Add Date</button>
+                     </li>
+                  </form>
+               </ul>
+            </div>
+         </div></div>
+</body>
+</html>
+
+
+             <!-- When user signed up successfully 		  
+                     <c:if test = "${isUserSingedUp}">
+                        <li class="w3-green w3-xlarge w3-padding-16">You signed up successfully</li>
+                     </c:if>
+                     
+                     <!-- When user fail to sign up 
+                     <c:if test = "${!isUserSingedUp && isUserSingedUp != null}">
+                        <li class="w3-red w3-xlarge w3-padding-16">Failed to sign up</li>
+                     </c:if>
+                     
+                     -->		

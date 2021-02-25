@@ -1,0 +1,50 @@
+package ma.youcode.doctor.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SecondaryTable;
+import javax.persistence.SecondaryTables;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="comments")
+public class Comment  {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
+	private int ID;
+	
+	@Column(name="user_id")	
+	private int userID;
+	
+	@Column(name="comment_content")
+	private String commentContent;
+	
+	// Default Constructor
+	public Comment() {
+
+	}
+
+	public Comment(int userID, String commentContent) {
+		super();
+		this.userID = userID;
+		this.commentContent = commentContent;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public String getCommentContent() {
+		return commentContent;
+	}
+	
+}

@@ -1,0 +1,36 @@
+package ma.youcode.doctor.entity;
+
+public class Date {
+	private int ID;
+	private String date;
+	private String time;
+	private boolean isTaken;
+	
+	public Date() {
+		super();
+	}
+
+	public Date(String date, String time, boolean isTaken) {
+		super();
+		this.date = date;
+		this.time = time;
+		this.isTaken = isTaken;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public boolean isTaken() {
+		return isTaken;
+	}
+	
+}

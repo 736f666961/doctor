@@ -1,0 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+
+<html>
+	<body>
+		<h2>
+			<c:out value = "Tiwa Savage"/>
+		</h2>
+	</body>
+</html>

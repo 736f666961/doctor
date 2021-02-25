@@ -1,0 +1,5 @@
+package ma.youcode.doctor.entity;
+
+public class Date {
+
+}

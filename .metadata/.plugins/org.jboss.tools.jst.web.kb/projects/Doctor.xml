@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects/>
+ <used-by-projects/>
+ <paths>
+  <path value="C:/Users/Sofia/.m2/repository/org/glassfish/jaxb/txw2/2.3.1/txw2-2.3.1.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/c-1_0-rt.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/c-1_0.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/c.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fmt-1_0-rt.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fmt-1_0.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fmt.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/fn.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/permittedtaglibs.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/scriptfree.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/sql-1_0-rt.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/sql-1_0.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/sql.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/x-1_0-rt.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/x-1_0.tld" project="Doctor"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-1.2.jar/meta-inf/x.tld" project="Doctor"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/Users/Sofia/.m2/repository/org/hibernate/orm/hibernate-core/6.0.0.Alpha6/hibernate-core-6.0.0.Alpha6.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/net/bytebuddy/byte-buddy/1.10.10/byte-buddy-1.10.10.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/antlr/ST4/4.3/ST4-4.3.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/abego/treelayout/org.abego.treelayout.core/1.0.3/org.abego.treelayout.core-1.0.3.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/com/ibm/icu/icu4j/61.1/icu4j-61.1.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/antlr/antlr4-runtime/4.8-1/antlr4-runtime-4.8-1.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/antlr/antlr4/4.8-1/antlr4-4.8-1.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/junit/junit/4.11/junit-4.11.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.1.0.Final/hibernate-commons-annotations-5.1.0.Final.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/postgresql/postgresql/42.2.18/postgresql-42.2.18.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/javax/servlet/jsp-api/2.0/jsp-api-2.0.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/org/jboss/jandex/2.1.3.Final/jandex-2.1.3.Final.jar"/>
+  <path value="C:/Users/Sofia/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar"/>
+ </paths>
+ <validation>
+  <core validator-id="jsf-verification"/>
+  <core validator-id="jboss.cdi.core"/>
+  <el>
+   <linked-el length="46" name="%0" offset="5224" path="%1"/>
+   <linked-el length="19" name="%0" offset="4979" path="%1"/>
+   <linked-el length="46" name="%2" offset="11844" path="%1"/>
+   <linked-el length="19" name="%3" offset="12062" path="%1"/>
+   <linked-el length="16" name="%4" offset="11642" path="%1"/>
+   <linked-el length="46" name="%5" offset="11844" path="%1"/>
+  </el>
+ </validation>
+ <aliases>
+  <alias path="isUserSingedUp" value="%0"/>
+  <alias path="CapitalizeLastName" value="%2"/>
+  <alias path="/Doctor/src/main/webapp/index.jsp" value="%1"/>
+  <alias path="commentContent" value="%3"/>
+  <alias path="firstLetter" value="%4"/>
+  <alias path="CapitalizeFirstName" value="%5"/>
+ </aliases>
+ <includes/>
+ <uris>
+  <uri value="http://java.sun.com/jstl/core">
+   <prefix>c</prefix>
+  </uri>
+ </uris>
+</kb-project>

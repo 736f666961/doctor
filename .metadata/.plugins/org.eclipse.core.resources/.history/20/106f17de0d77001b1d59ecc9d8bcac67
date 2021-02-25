@@ -1,0 +1,54 @@
+package ma.youcode.doctor.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="dates")
+public class Date {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
+	private int ID;
+	
+	@Column(name="date")
+	private String date;
+	
+	@Column(name="time")
+	private String time;
+	
+	@Column(name="istaken")
+	private boolean isTaken;
+	
+	public Date() {
+		super();
+	}
+
+	public Date(String date, String time, boolean isTaken) {
+		super();
+		this.date = date;
+		this.time = time;
+		this.isTaken = isTaken;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public boolean isTaken() {
+		return isTaken;
+	}
+	
+}
